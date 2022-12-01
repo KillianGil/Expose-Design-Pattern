@@ -1,8 +1,9 @@
-# Wiki : Design Pattern 
+# Wiki Design Pattern : Groupe C
 ## Objet Composite et Injection de contrôle / de dépendance
+
 Dans ce wiki nous allons vous présenter et expliquer de design pattern different : 
-* L'objet Composite 
-* L'injection de contrôle / de dépendance 
+* [L'objet Composite](#objetComposite) 
+* L'injection de contrôle / de dépendance (#injection)
 
 Nous allons suivre un plan précis pour chacun d'entre eux afin que ce soit clair, net et pertinent. Nous allons utiliser le plan suivant : 
 1. Concept / Définition 
@@ -21,6 +22,19 @@ Autres → contient tous les autres design patterns ne faisant pas parti des 3 a
 Ce concept de design pattern est apparu dans les années 90, suite à la publication d'un ouvrage en 1995 par une équipe composée de **Erich Gamma, Richard Helm, Ralph Johnson et John Vlissides** . Ce livre s’intitule _"Design Patterns : Elements of Reusable Object-Oriented Software"_. Nous pouvons y retrouver les 23 Design Patterns dédiés au développement logiciel évoqués précédemment.
 
 ------------------------------------------------------------------------------------------------------------------------------------
+### Objet Composite <a id="objetComposite"></a> 
 
 Dans cette partie, nous nous intéresserons uniquement au design Pattern nommé  **“Objet Composite”**, l’idée transmise est de représenter des objets simples ainsi que leurs récipients ou compositions (c’est-à-dire des compositions d’objets) dans une classe abstraite afin de pouvoir les traiter de manière uniforme. En effet , ce design pattern permet de gérer un ensemble d'objets en tant qu'un seul et même objet, en d'autres termes un objet composé de plusieurs autres. Pour illustrer ce concept et faciliter l’explication , nous avons utiliser un diagramme UML ( récupérer sur : https://fr.wikipedia.org/wiki/Composite_(patron_de_conception))  : 
-![Diagramme UML Objet Composite](https://www.cjoint.com/doc/22_12/LLbiL1MGI1j_Capture-d’écran-2022-12-01-à-09.35.15.png) 
+<p align="center">
+  <img src="https://www.cjoint.com/doc/22_12/LLbiZfMmdPS_Capture-d’écran-2022-12-01-à-09.35.15.png" alt="Diagramme UML Objet Composite"/>
+</p>
+
+Nous pouvons donc observer ce diagramme UML représentant l’idée développée par le pattern. 
+Le **“Composant”** représente ici une interface qui définit les comportements / opérations commun(e)s de chaque composants (feuille et composite) dans l’arborescence. 
+
+Ensuite nous avons le **“Composite”** (conteneur en francais) , c’est un élément composé de sous-éléments : feuilles ou autres conteneurs. Un conteneur n'a aucune connaissance des classes de ses enfants. Il interagit avec via l'interface du composant. Lorsqu'il reçoit une demande, le conteneur délègue des tâches à ses enfants, traite les résultats intermédiaires et renvoie le résultat final. 
+
+Enfin , nous avons la **“Feuille”**, qui représente les composants n’ayant pas de sous-éléments , elle reprend aussi le comportement par défaut défini dans l'interface.
+Nous pouvons affirmer que ce design pattern suit une structure d'arborescence avec une interface , un conteneur et les enfants (pouvant être des conteneurs aussi). 
+
+
