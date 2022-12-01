@@ -61,3 +61,5 @@ Malgré ses avantages , nous pouvons citer deux inconvénients au pattern  :
 Globalement, ce design pattern reste très utile et pratique , offrant plus d’avantages que d'inconvénients. 
 
 ### Exemple <a id="exempleComposite"></a>
+
+
