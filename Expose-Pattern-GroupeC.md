@@ -3,15 +3,15 @@
 
 Dans ce wiki nous allons vous présenter et expliquer de design pattern different : 
 * [L'objet Composite](#objetComposite) 
-* L'injection de contrôle / de dépendance (#injection)
+* [L'injection de contrôle / de dépendance](#injection)
 
 Nous allons suivre un plan précis pour chacun d'entre eux afin que ce soit clair, net et pertinent. Nous allons utiliser le plan suivant : 
 1. Concept / Définition 
-2. Pour quel problème ? 
-3. Avantages et Inconvénients
-4. Exemple 
+2. Pour quel problème ? ([Composite](#problemeComposite) | [Injection](#problemeInjection))
+3. Avantages et Inconvénients ([Composite](#aiComposite) | [Injection](#aiInjection))
+4. Exemple ([Composite](#exempleComposite) | [Injection](#exempleInjection))
 
-**Introduction**
+### Introduction
 
 L’objet Composite et l'injection de contrôle sont les noms de design patterns, ou patron de conception en français. Les designs patterns sont des solutions aux problèmes récurrents dans la conception d'applications orientées objet. Le patron de conception décrit les grandes lignes d'une solution, qui peuvent ensuite être modifiées et adaptées en fonction des besoins. Il existe au total 23 designs patterns différents, ils sont tous triés dans 4 familles : 
 * De **construction** → description de la manière dont un objet peut être créé et isolation du code relatif à la création 
@@ -37,4 +37,27 @@ Ensuite nous avons le **“Composite”** (conteneur en francais) , c’est un �
 Enfin , nous avons la **“Feuille”**, qui représente les composants n’ayant pas de sous-éléments , elle reprend aussi le comportement par défaut défini dans l'interface.
 Nous pouvons affirmer que ce design pattern suit une structure d'arborescence avec une interface , un conteneur et les enfants (pouvant être des conteneurs aussi). 
 
+### Pour quel problème ? <a id="problemeComposite"></a>
 
+Le but principal d’un design pattern est de fournir une solution a un **problème récurrent** lors de la conception et du développement de logiciel, application. Le composite pattern a été mis en place pour résoudre des problèmes sur applications dont la structure principale peut être représentée sous la forme d’**une arborescence**. 
+
+Le résultat recherché de par l'utilisation de ce pattern est un logiciel le plus flexible possible et caractérisé par des objets faciles à mettre en œuvre, testables, interchangeables et réutilisables. Le pattern composite décrit une façon de traiter de la même manière les objets simples et composites. Il est ainsi possible de créer des structures d'objets faciles à comprendre et permettant l'accès le plus efficace. Cela minimise également la tendance aux erreurs du code.
+
+De ce fait, nous pouvons affirmer que le design pattern composite est très utile et résout de nombreux problèmes rien qu'avec l’utilisation de celui-ci. Mais, nous pouvons imaginer que ce pattern comporte non seulement des avantages mais probablement aussi quelques inconvénients que nous allons pouvoir étudier. 
+
+### Avantages et inconvénients <a id="aiComposite"></a>
+
+Nous allons désormais vous présenter les quelques avantages et inconvénients que rencontre ce design pattern, même minime. Les avantages reste plus important que le nombre d'inconvénients.  Tout d’abord, ce pattern permet de gérer des structures fortement imbriquées. En effet , si la structure suit l’organisation en arborescence alors, qu’il s’agisse d’un objet primitif ou composite, avec des dépendances simples ou complexes : **la profondeur et la largeur de l’imbrication** n’ont pas d’importance pour le modèle de conception composite. 
+
+Ensuite, les différences entre **les types d'objets** peuvent être complètement ignorées par les clients, de sorte qu'aucune fonction n'est nécessaire pour l'accès. L'avantage est que le code client reste simple et léger. 
+
+Enfin, le dernier point fort de ce pattern est que la structure est **flexible** et l’**agrandissement** de celle-ci est très simple. En effet, l’ajout de nouvelles “feuilles” ou de nouveaux objets est très simple et ne nécessite pas forcément de modification du code. 
+
+Malgré ses avantages , nous pouvons citer deux inconvénients au pattern  : 
+
+* La **mise en place de l’interface** est plutôt compliquée : il faut décider quelles opérations doivent être définies spécifiquement dans l’interface et lesquelles dans les classes composites.
+* Les **ajustements ultérieurs** des propriétés du composite (par exemple, la restriction des éléments enfants autorisés) s'avèrent également compliqués. 
+
+Globalement, ce design pattern reste très utile et pratique , offrant plus d’avantages que d'inconvénients. 
+
+### Exemple <a id="exempleComposite"></a>
