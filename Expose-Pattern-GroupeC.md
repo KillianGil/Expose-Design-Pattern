@@ -1,2 +1,26 @@
-<h1>Wiki : Design Pattern</h1>
-<h2>Objet Composite et Injection de contrôle/ de dépendance</h2>
+# Wiki : Design Pattern 
+## Objet Composite et Injection de contrôle / de dépendance
+Dans ce wiki nous allons vous présenter et expliquer de design pattern different : 
+* L'objet Composite 
+* L'injection de contrôle / de dépendance 
+
+Nous allons suivre un plan précis pour chacun d'entre eux afin que ce soit clair, net et pertinent. Nous allons utiliser le plan suivant : 
+1. Concept / Définition 
+2. Pour quel problème ? 
+3. Avantages et Inconvénients
+4. Exemple 
+
+**Introduction**
+
+L’objet Composite et l'injection de contrôle sont les noms de design patterns, ou patron de conception en français. Les designs patterns sont des solutions aux problèmes récurrents dans la conception d'applications orientées objet. Le patron de conception décrit les grandes lignes d'une solution, qui peuvent ensuite être modifiées et adaptées en fonction des besoins. Il existe au total 23 designs patterns différents, ils sont tous triés dans 4 familles : 
+* De **construction** → description de la manière dont un objet peut être créé et isolation du code relatif à la création 
+* De **structuration** → description de la manière dont doivent être connectés les objets de l'application afin de rendre ces connexions indépendantes de futures évolutions 
+* De **comportement** →  description de comportements d'interaction entre objets
+Autres → contient tous les autres design patterns ne faisant pas parti des 3 autres familles 
+
+Ce concept de design pattern est apparu dans les années 90, suite à la publication d'un ouvrage en 1995 par une équipe composée de **Erich Gamma, Richard Helm, Ralph Johnson et John Vlissides** . Ce livre s’intitule _"Design Patterns : Elements of Reusable Object-Oriented Software"_. Nous pouvons y retrouver les 23 Design Patterns dédiés au développement logiciel évoqués précédemment.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Dans cette partie, nous nous intéresserons uniquement au design Pattern nommé  **“Objet Composite”**, l’idée transmise est de représenter des objets simples ainsi que leurs récipients ou compositions (c’est-à-dire des compositions d’objets) dans une classe abstraite afin de pouvoir les traiter de manière uniforme. En effet , ce design pattern permet de gérer un ensemble d'objets en tant qu'un seul et même objet, en d'autres termes un objet composé de plusieurs autres. Pour illustrer ce concept et faciliter l’explication , nous avons utiliser un diagramme UML ( récupérer sur : https://fr.wikipedia.org/wiki/Composite_(patron_de_conception))  : 
+![Diagramme UML Objet Composite](https://www.cjoint.com/doc/22_12/LLbiL1MGI1j_Capture-d’écran-2022-12-01-à-09.35.15.png) 
