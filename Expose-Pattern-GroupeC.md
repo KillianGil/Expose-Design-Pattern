@@ -62,4 +62,79 @@ Globalement, ce design pattern reste très utile et pratique , offrant plus d’
 
 ### Exemple <a id="exempleComposite"></a>
 
+Pour commencer, on crée l'interface qui sera implémentée par toutes les classes. Comme nous l'avons dis plus haut, Le **“Composant”** représente ici une interface qui définit les comportements / opérations commun(e)s de chaque composants (feuille et composite) dans l’arborescence. 
+```java
+public interface Forme {
+    public void dessiner(String couleur);
+}
+```
+Deuxièmement, on crée les différentes classes. Ces dernières réprésentes les feuilles implémentant la méthode permettant d'afficher la couleur de la forme choisie. 
+```java
+public class Carre implements Forme{
+
+    @Override
+    public void dessiner(String couleur) {
+
+        System.out.println("Dessin du carre de la couleur " + couleur);
+    }
+}
+
+public class Cercle implements Forme{
+
+    @Override
+    public void dessiner(String couleur) {
+        System.out.println("Dessin du cercle de la couleur " + couleur);
+    }
+}
+```
+Pour finir, on s'interesse à la classe composite. C'est cette dernière qui représente la hiérarchie. Il comprends les feuilles précédemment implémentées : le carré et le cercle. On y ajoute aussi les méthodes d'ajout et de supression d'éléments. 
+```java
+public class Dessin implements Forme{
+
+    private List<Forme> formes = new ArrayList<Forme>();
+
+    @Override
+    public void dessiner(String couleur) {
+        for(Forme f : formes){
+            f.dessiner(couleur);
+        }
+    }
+
+    public void ajouter(Forme f){
+        this.formes.add(f);
+    }
+
+    public void retirer(Forme f){
+        this.formes.remove(f);
+        System.out.println("On a retirer une forme du dessin");
+    }
+}
+```
+Voici un exemple d'utilisation de ce Composite. 
+```java
+public class  Main {
+    public static void main(String[] args) {
+        Forme carre= new Carre();
+        Forme cercle= new Cercle();
+
+        Dessin dessin = new Dessin();
+        dessin.ajouter(carre);
+        dessin.ajouter(cercle);
+
+        dessin.dessiner("violet");
+
+        dessin.retirer(carre);
+    }
+}
+```
+On obtient dans la console :
+```
+Dessin du carre de la couleur violet
+Dessin du cercle de la couleur violet
+On a retirer une forme du dessin
+```
+
+
+
+
 
