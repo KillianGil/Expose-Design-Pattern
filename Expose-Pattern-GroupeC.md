@@ -1,7 +1,7 @@
 # Wiki Design Pattern : Groupe C
 ## Objet Composite et Injection de contrôle / de dépendance
 
-Dans ce wiki nous allons vous présenter et expliquer de design pattern different : 
+Dans ce wiki nous allons vous présenter et expliquer les design patterns suivants : 
 * [L'objet Composite](#objetComposite) 
 * [L'injection de contrôle / de dépendance](#injection)
 
