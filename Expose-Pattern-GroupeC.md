@@ -134,7 +134,101 @@ Dessin du cercle de la couleur violet
 On a retirer une forme du dessin
 ```
 
+------------------------------------------------------------------------------------------------------------------------------------
 
+
+### Injection de controle / de dépendance  <a id="injection"></a> 
+
+Cette fois nous allons nous intéresser au Design Pattern **"Injection de controle / de dépendances"**.
+Avant de définir ce qu'est l'injection de dépendances il faut définir ce qu'est le principe d'inversion de controle qui est implémenté par l'injection de dépendances : 
+
+**Inversion de contrôle:**
+
+En temps normal, le comportement du framework (l’infrastructure logicielle) est dicté par le logiciel. L’inversion de contrôle est un patron d’architecture (ou “architectural pattern”) qui permute la relation entre le framework et le flot d’exécution du logiciel.
+
+L'infrastructure logicielle prend donc en compte l’exécution du programme et coordonne son fonctionnement. Le logiciel, lui, va définir par la suite ses blocs de codes en fonction de l'interface de programmation qui lui est fournie.
+
+L’inversion de contrôle n’est pas un design pattern en soi, mais plutôt un principe de développement qui peut être implémenté différemment en fonction de la situation
+
+**L'injection de dépendances**
+
+L'objectif premier de ce Design Pattern est d'éviter une dépendance direct entre deux classes et de definir dynamiquement la dépendance plutot que statiquement. Afin d'illustrer ce concept nous allons regarder 2 Diagramme UML : (Récupérer sur  : http://igm.univ-mlv.fr/~dr/XPOSE2010/guicespring/di_presentation.html)
+
+<p align="center">
+  <img src="src/injection_sans.jpg" alt="Diagramme UML Dépendance classique"/>
+</p>
+
+Ce premier diagramme illustre une dépendance classique sans l'utilisation de l'injection de dépendances. Une classe A dépend d'un autre classe B car elle a un attribut de type B. Cette technique est rapide a développer mais elle est statique.
+
+Si on souhaite enlever une classe et la remplcer par une autre (façon dynamique), il faut utiliser l'injection de dépendance.
+
+L'injection de dépendances peut être effectué de plusieurs façons (interface, constructeur, ...)
+Nous allons ici regarder comment cela fonctionne avec une interface : 
+<p align="center">
+  <img src="src/injection.png" alt="Diagramme UML Injection de dépendance"/>
+</p>
+Ce deuxième Diagramme UML montre l'injection de dépendance avec une interface. Nous expliquerons cette méthode plus en détail dans l'exemple
+
+
+### Pour quel problème ? <a id="problemeInjection"></a>
+
+Soient deux classes **X** et **Y**. Dans notre cas, la classe X se sert de la classe Y pour accomplir quelque chose. Une implémentation classique de cette situation peut être modélisée ainsi : 
+<p align="center">
+  <img src="src/1.png" alt="Diagramme pour quel problème 1"/>
+</p>
+Mais la classe X a-t-elle réellement besoin de savoir qu’elle se sert de la classe Y? 
+Il est en effet suffisant que la classe X sache qu’elle utilise un objet qui a le comportement, les méthodes, propriétés de la classe Y sans pourtant savoir d’où elles proviennent.
+
+C’est là que l’injection de dépendances intervient. Ce design pattern extrait une définition abstraite de la classe Y dont va se servir la classe X qui va pouvoir s'exécuter normalement, sans réellement disposer des caractéristiques de Y.
+<p align="center">
+  <img src="src/2.png" alt="Diagramme pour quel probleme 2"/>
+</p>
+
+
+
+
+### Exemple <a id="exempleInjection"></a>
+
+Nous allons ici regarder comment l'injection de dépendances fonctionne avec une interface : 
+<p align="center">
+  <img src="src/injection.png" alt="Diagramme UML Injection de dépendance"/>
+</p>
+Comme montré precedemment, ce diagramme UML montre l'injection de dépendance avec une interface. Cette méthode s'effectue en plusieurs étapes  : 
+
+* Créer une **Interface I** qui déclare toutes les méthodes de la classe B que A utilise
+* Déclarer la classe B comme une iplémentation de I
+* Dans la classe A, remplacer toutes les référeces a la classe B par des références a I
+
+Les interfaces en java permettent de définir des méthodes et leurs paramètres sans en définir le code. Ces interfaces sont ensuites implémentées par les classes dont on dépend.
+
+Dans le code on peut mettre en place cette methode : 
+
+Tout d'abord on crée donc l'interface (ici : interfaceI)
+
+```java
+public interface interfaceI {
+    public void write(string Message);
+}
+```
+Notre Classe B doit donc implémenter I :
+```java
+public class ClassB implements interfaceI {
+    private 
+    @Override
+    public void write(string Message) {
+        System.out.println(Message);
+    }
+}
+```
+Ensuite on fait référence à l'interface et non a la classe B
+```java
+public class ClassA {
+   public static void main(String[] args) {
+      interfaceI B = new ClassB();
+      B.write("test");
+   }
+}
+```
 
 
 
