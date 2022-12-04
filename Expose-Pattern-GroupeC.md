@@ -166,7 +166,7 @@ Nous allons ici regarder comment cela fonctionne avec une interface :
 <p align="center">
   <img src="src/injection.png" alt="Diagramme UML Injection de dépendance"/>
 </p>
-Ce deuxième diagramme UML montre l'injection de dépendance avec une interface. Nous expliquerons cette méthode plus en détail dans la partie [Exemple](#exempleInjection).
+Ce deuxième diagramme UML montre l'injection de dépendance avec une interface. Nous expliquerons cette méthode plus en détail dans la partie [Exemple](#exempleInjection)
 
 
 ### Pour quel problème ? <a id="problemeInjection"></a>
