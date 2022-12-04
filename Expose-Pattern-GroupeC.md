@@ -3,7 +3,7 @@
 
 Dans ce wiki nous allons vous présenter et expliquer les design patterns suivants : 
 * [L'objet Composite](#objetComposite) 
-* [L'injection de contrôle / de dépendance](#injection)
+* [L'inversion de contrôle / injection de dépendance](#injection)
 
 Nous allons suivre un plan précis pour chacun d'entre eux afin que ce soit clair, net et pertinent. Nous allons utiliser le plan suivant : 
 1. Concept / Définition 
@@ -13,18 +13,18 @@ Nous allons suivre un plan précis pour chacun d'entre eux afin que ce soit clai
 
 ### Introduction
 
-L’objet Composite et l'injection de contrôle sont les noms de design patterns, ou patron de conception en français. Les designs patterns sont des solutions aux problèmes récurrents dans la conception d'applications orientées objet. Le patron de conception décrit les grandes lignes d'une solution, qui peuvent ensuite être modifiées et adaptées en fonction des besoins. Il existe au total 23 designs patterns différents, ils sont tous triés dans 4 familles : 
-* De **construction** → description de la manière dont un objet peut être créé et isolation du code relatif à la création 
+L’objet Composite et l'injection de dépendances sont les noms de design patterns, ou patrons de conception en français. Les designs patterns sont des solutions aux problèmes récurrents dans la conception d'applications orientées objet. Le patron de conception décrit les grandes lignes d'une solution, qui peuvent ensuite être modifiées et adaptées en fonction des besoins. Il existe au total 23 designs patterns différents, ils sont tous triés dans 4 familles : 
+* De **construction** → description de la manière dont un objet peut être créé en isolation du code relatif à la création 
 * De **structuration** → description de la manière dont doivent être connectés les objets de l'application afin de rendre ces connexions indépendantes de futures évolutions 
 * De **comportement** →  description de comportements d'interaction entre objets
-Autres → contient tous les autres design patterns ne faisant pas parti des 3 autres familles 
+Autres → contient tous les autres design patterns ne faisant pas partie des 3 autres familles 
 
-Ce concept de design pattern est apparu dans les années 90, suite à la publication d'un ouvrage en 1995 par une équipe composée de **Erich Gamma, Richard Helm, Ralph Johnson et John Vlissides** . Ce livre s’intitule _"Design Patterns : Elements of Reusable Object-Oriented Software"_. Nous pouvons y retrouver les 23 Design Patterns dédiés au développement logiciel évoqués précédemment.
+Ce concept est apparu dans les années 90, suite à la publication d'un ouvrage en 1995 par une équipe composée de **Erich Gamma, Richard Helm, Ralph Johnson et John Vlissides** . Ce livre s’intitule _"Design Patterns : Elements of Reusable Object-Oriented Software"_. Nous pouvons y retrouver les 23 Design Patterns dédiés au développement logiciel évoqués précédemment.
 
 ------------------------------------------------------------------------------------------------------------------------------------
 ### Objet Composite <a id="objetComposite"></a> 
 
-Dans cette partie, nous nous intéresserons uniquement au design Pattern nommé  **“Objet Composite”**, l’idée transmise est de représenter des objets simples ainsi que leurs récipients ou compositions (c’est-à-dire des compositions d’objets) dans une classe abstraite afin de pouvoir les traiter de manière uniforme. En effet , ce design pattern permet de gérer un ensemble d'objets en tant qu'un seul et même objet, en d'autres termes un objet composé de plusieurs autres. Pour illustrer ce concept et faciliter l’explication , nous avons utiliser un diagramme UML ( récupérer sur : https://fr.wikipedia.org/wiki/Composite_(patron_de_conception))  : 
+Dans cette partie, nous nous intéresserons uniquement au design Pattern nommé  **“Objet Composite”**, l’idée transmise est de représenter des objets simples ainsi que leurs récipients ou compositions (c’est-à-dire des compositions d’objets) dans une classe abstraite afin de pouvoir les traiter de manière uniforme. En effet , ce design pattern permet de gérer un ensemble d'objets en tant qu'un seul et même objet, en d'autres termes un objet composé de plusieurs autres. Pour illustrer ce concept et faciliter l’explication , nous avons utiliser un diagramme UML ( récupéré sur : https://fr.wikipedia.org/wiki/Composite_(patron_de_conception))  : 
 <p align="center">
   <img src="https://www.cjoint.com/doc/22_12/LLbiZfMmdPS_Capture-d’écran-2022-12-01-à-09.35.15.png" alt="Diagramme UML Objet Composite"/>
 </p>
@@ -39,7 +39,7 @@ Nous pouvons affirmer que ce design pattern suit une structure d'arborescence av
 
 ### Pour quel problème ? <a id="problemeComposite"></a>
 
-Le but principal d’un design pattern est de fournir une solution a un **problème récurrent** lors de la conception et du développement de logiciel, application. Le composite pattern a été mis en place pour résoudre des problèmes sur applications dont la structure principale peut être représentée sous la forme d’**une arborescence**. 
+Le but principal d’un design pattern est de fournir une solution a un **problème récurrent** lors de la conception et du développement de logiciel, application. Le composite pattern a été mis en place pour résoudre des problèmes sur les applications dont la structure principale peut être représentée sous la forme d’**une arborescence**. 
 
 Le résultat recherché de par l'utilisation de ce pattern est un logiciel le plus flexible possible et caractérisé par des objets faciles à mettre en œuvre, testables, interchangeables et réutilisables. Le pattern composite décrit une façon de traiter de la même manière les objets simples et composites. Il est ainsi possible de créer des structures d'objets faciles à comprendre et permettant l'accès le plus efficace. Cela minimise également la tendance aux erreurs du code.
 
@@ -47,7 +47,7 @@ De ce fait, nous pouvons affirmer que le design pattern composite est très util
 
 ### Avantages et inconvénients <a id="aiComposite"></a>
 
-Nous allons désormais vous présenter les quelques avantages et inconvénients que rencontre ce design pattern, même minime. Les avantages reste plus important que le nombre d'inconvénients.  Tout d’abord, ce pattern permet de gérer des structures fortement imbriquées. En effet , si la structure suit l’organisation en arborescence alors, qu’il s’agisse d’un objet primitif ou composite, avec des dépendances simples ou complexes : **la profondeur et la largeur de l’imbrication** n’ont pas d’importance pour le modèle de conception composite. 
+Nous allons désormais vous présenter les quelques avantages et inconvénients que rencontre ce design pattern. Les avantages restent plus importants que le nombre d'inconvénients.  Tout d’abord, ce pattern permet de gérer des structures fortement imbriquées. En effet , si la structure suit l’organisation en arborescence alors, qu’il s’agisse d’un objet primitif ou composite, avec des dépendances simples ou complexes : **la profondeur et la largeur de l’imbrication** n’ont pas d’importance pour le modèle de conception composite. 
 
 Ensuite, les différences entre **les types d'objets** peuvent être complètement ignorées par les clients, de sorte qu'aucune fonction n'est nécessaire pour l'accès. L'avantage est que le code client reste simple et léger. 
 
@@ -56,7 +56,7 @@ Enfin, le dernier point fort de ce pattern est que la structure est **flexible**
 Malgré ses avantages , nous pouvons citer deux inconvénients au pattern  : 
 
 * La **mise en place de l’interface** est plutôt compliquée : il faut décider quelles opérations doivent être définies spécifiquement dans l’interface et lesquelles dans les classes composites.
-* Les **ajustements ultérieurs** des propriétés du composite (par exemple, la restriction des éléments enfants autorisés) s'avèrent également compliqués. 
+* Les **ajustements ultérieurs** des propriétés du composite (par exemple, la restriction des éléments enfants autorisés) s'avèrent également délicats. 
 
 Globalement, ce design pattern reste très utile et pratique , offrant plus d’avantages que d'inconvénients. 
 
@@ -87,7 +87,7 @@ public class Cercle implements Forme{
     }
 }
 ```
-Pour finir, on s'interesse à la classe composite. C'est cette dernière qui représente la hiérarchie. Il comprends les feuilles précédemment implémentées : le carré et le cercle. On y ajoute aussi les méthodes d'ajout et de supression d'éléments. 
+Pour finir, on s'interesse à la classe composite. C'est cette dernière qui représente la hiérarchie. Elle comprend les feuilles précédemment implémentées : le carré et le cercle. On y ajoute aussi les méthodes d'ajout et de supression d'éléments. 
 ```java
 public class Dessin implements Forme{
 
@@ -137,10 +137,9 @@ On a retirer une forme du dessin
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
-### Injection de controle / de dépendance  <a id="injection"></a> 
-
-Cette fois nous allons nous intéresser au Design Pattern **"Injection de controle / de dépendances"**.
-Avant de définir ce qu'est l'injection de dépendances il faut définir ce qu'est le principe d'inversion de controle qui est implémenté par l'injection de dépendances : 
+### Injection de contrôle / de dépendance  <a id="injection"></a> 
+Intéressons-nous à présent à l' **"Inversion de contrôle / Injection de dépendances"**.
+Avant de définir ce qu'est l'injection de dépendances il faut définir ce qu'est le principe d'inversion de contrôle.
 
 **Inversion de contrôle:**
 
@@ -152,7 +151,7 @@ L’inversion de contrôle n’est pas un design pattern en soi, mais plutôt un
 
 **L'injection de dépendances**
 
-L'objectif premier de ce Design Pattern est d'éviter une dépendance direct entre deux classes et de definir dynamiquement la dépendance plutot que statiquement. Afin d'illustrer ce concept nous allons regarder 2 Diagramme UML : (Récupérer sur  : http://igm.univ-mlv.fr/~dr/XPOSE2010/guicespring/di_presentation.html)
+L'objectif premier de ce Design Pattern est d'éviter une dépendance directe entre deux classes et de definir dynamiquement la dépendance plutot que statiquement. Afin d'illustrer ce concept nous pencher sur ces deux diagrammes : (Récupérés sur  : http://igm.univ-mlv.fr/~dr/XPOSE2010/guicespring/di_presentation.html)
 
 <p align="center">
   <img src="src/injection_sans.jpg" alt="Diagramme UML Dépendance classique"/>
@@ -160,14 +159,14 @@ L'objectif premier de ce Design Pattern est d'éviter une dépendance direct ent
 
 Ce premier diagramme illustre une dépendance classique sans l'utilisation de l'injection de dépendances. Une classe A dépend d'un autre classe B car elle a un attribut de type B. Cette technique est rapide a développer mais elle est statique.
 
-Si on souhaite enlever une classe et la remplcer par une autre (façon dynamique), il faut utiliser l'injection de dépendance.
+Si on souhaite enlever une classe et la remplcer par une autre (façon dynamique), il faut utiliser l'injection de dépendances.
 
 L'injection de dépendances peut être effectué de plusieurs façons (interface, constructeur, ...)
 Nous allons ici regarder comment cela fonctionne avec une interface : 
 <p align="center">
   <img src="src/injection.png" alt="Diagramme UML Injection de dépendance"/>
 </p>
-Ce deuxième Diagramme UML montre l'injection de dépendance avec une interface. Nous expliquerons cette méthode plus en détail dans l'exemple
+Ce deuxième diagramme UML montre l'injection de dépendance avec une interface. Nous expliquerons cette méthode plus en détail dans la partie [Exemple](#exempleInjection).
 
 
 ### Pour quel problème ? <a id="problemeInjection"></a>
@@ -196,8 +195,8 @@ Nous allons ici regarder comment l'injection de dépendances fonctionne avec une
 Comme montré precedemment, ce diagramme UML montre l'injection de dépendance avec une interface. Cette méthode s'effectue en plusieurs étapes  : 
 
 * Créer une **Interface I** qui déclare toutes les méthodes de la classe B que A utilise
-* Déclarer la classe B comme une iplémentation de I
-* Dans la classe A, remplacer toutes les référeces a la classe B par des références a I
+* Déclarer la classe B comme une implémentation de **I**
+* Dans la classe A, remplacer toutes les références a la classe B par des références a **I**
 
 Les interfaces en java permettent de définir des méthodes et leurs paramètres sans en définir le code. Ces interfaces sont ensuites implémentées par les classes dont on dépend.
 
@@ -220,7 +219,7 @@ public class ClassB implements interfaceI {
     }
 }
 ```
-Ensuite on fait référence à l'interface et non a la classe B
+Enfin, on fait référence à l'interface et non a la classe B.
 ```java
 public class ClassA {
    public static void main(String[] args) {
