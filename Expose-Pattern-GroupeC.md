@@ -10,6 +10,7 @@ Nous allons suivre un plan précis pour chacun d'entre eux afin que ce soit clai
 2. Pour quel problème ? ([Composite](#problemeComposite) | [Injection](#problemeInjection))
 3. Avantages et Inconvénients ([Composite](#aiComposite) | [Injection](#aiInjection))
 4. Exemple ([Composite](#exempleComposite) | [Injection](#exempleInjection))
+5. [Sources](#sources) 
 
 ### Introduction
 
@@ -17,7 +18,7 @@ L’objet Composite et l'injection de dépendances sont les noms de design patte
 * De **construction** → description de la manière dont un objet peut être créé en isolation du code relatif à la création 
 * De **structuration** → description de la manière dont doivent être connectés les objets de l'application afin de rendre ces connexions indépendantes de futures évolutions 
 * De **comportement** →  description de comportements d'interaction entre objets
-Autres → contient tous les autres design patterns ne faisant pas partie des 3 autres familles 
+* **Autres** → contient tous les autres design patterns ne faisant pas partie des 3 autres familles 
 
 Ce concept est apparu dans les années 90, suite à la publication d'un ouvrage en 1995 par une équipe composée de **Erich Gamma, Richard Helm, Ralph Johnson et John Vlissides** . Ce livre s’intitule _"Design Patterns : Elements of Reusable Object-Oriented Software"_. Nous pouvons y retrouver les 23 Design Patterns dédiés au développement logiciel évoqués précédemment.
 
@@ -229,5 +230,16 @@ public class ClassA {
 }
 ```
 
+------------------------------------------------------------------------------------------------------------------------------------
 
+### Sources <a id="sources"></a>
 
+Objet composite : 
+* https://fr.wikipedia.org/wiki/Composite_(patron_de_conception
+* https://refactoring.guru/fr/design-patterns/composite
+* https://www.ionos.fr/digitalguide/
+
+Injection de contrôle / de dépendance : 
+* https://fr.wikipedia.org/wiki/Inversion_de_contr%C3%B4le
+* https://www.digitalocean.com/community/tutorials/java-dependency-injection-design-pattern-example-tutorial
+* http://joelabrahamsson.com/inversion-of-control-an-introduction-with-examples-in-net/
