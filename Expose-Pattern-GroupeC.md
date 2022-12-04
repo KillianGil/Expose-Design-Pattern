@@ -8,7 +8,7 @@ Dans ce wiki nous allons vous présenter et expliquer les design patterns suivan
 Nous allons suivre un plan précis pour chacun d'entre eux afin que ce soit clair, net et pertinent. Nous allons utiliser le plan suivant : 
 1. Concept / Définition 
 2. Pour quel problème ? ([Composite](#problemeComposite) | [Injection](#problemeInjection))
-3. Avantages et Inconvénients ([Composite](#aiComposite) | [Injection](#aiInjection))
+3. Avantages et Inconvénients ([Composite](#aiComposite))
 4. Exemple ([Composite](#exempleComposite) | [Injection](#exempleInjection))
 5. [Sources](#sources) 
 
