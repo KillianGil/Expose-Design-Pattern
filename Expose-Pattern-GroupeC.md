@@ -213,7 +213,6 @@ public interface interfaceI {
 Notre Classe B doit donc implémenter I :
 ```java
 public class ClassB implements interfaceI {
-    private 
     @Override
     public void write(string Message) {
         System.out.println(Message);
