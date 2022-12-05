@@ -8,7 +8,7 @@ Dans ce wiki nous allons vous présenter et expliquer les design patterns suivan
 Nous allons suivre un plan précis pour chacun d'entre eux afin que ce soit clair, net et pertinent. Nous allons utiliser le plan suivant : 
 1. Concept / Définition 
 2. Pour quel problème ? ([Composite](#problemeComposite) | [Injection](#problemeInjection))
-3. Avantages et Inconvénients ([Composite](#aiComposite))
+3. Avantages et Inconvénients ([Composite](#aiComposite) | [Injection](#aiInjection))
 4. Exemple ([Composite](#exempleComposite) | [Injection](#exempleInjection))
 5. [Sources](#sources) 
 
@@ -184,7 +184,15 @@ C’est là que l’injection de dépendances intervient. Ce design pattern extr
   <img src="src/2.png" alt="Diagramme pour quel probleme 2"/>
 </p>
 
+### Avantages et inconvénients <a id="aiInjection"></a>
+**Avantages :** 
+* Comme le framework dicte le fonctionnement de nos objets, cette approche facilite l’option de disposer de plusieurs configurations pour une même application (exemple: fichier .config).
+* Même si l’implémentation par interfaces est un peu moins instinctive qu’une approche classique, elle reste tout de même rapide à prendre en main tout en présentant des améliorations instantanées. 
+* Avec l’interface qui sert de “passerelle” entre chaque objet, les dépendances au sein de notre application se trouvent allégées.
 
+**Inconvénients :**
+* La dépendance de chaque objet est certainement amoindrie, mais elle n’est pas complètement éliminée. En effet, cela est impossible. Il faudra donc veiller aux répercussions que pourraient avoir des changements majeurs dans certaines classes.
+* Nous n’avons survolé que l’injection de dépendances par interface mais elle n’est pas toujours applicable. En effet, il existe une multitude de méthode pour implémenter le principe d’inversion de contrôle. Les résultats que produisent cette méthode peuvent être très variables en fonction de la situation (complexité, rapidité d’exécution, compatibilité).
 
 
 ### Exemple <a id="exempleInjection"></a>
